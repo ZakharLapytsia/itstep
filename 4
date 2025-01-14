@@ -1,0 +1,44 @@
+
+class LivingOrganism:
+    def __init__(self, name):
+        self.name = name
+
+    def breathe(self):
+        return f"{self.name} дихає."
+
+class Animal(LivingOrganism):
+    def __init__(self, name, species):
+        super().__init__(name)
+        self.species = species
+
+    def move(self):
+        return f"{self.name} ({self.species}) рухається."
+
+class Robot:
+    def __init__(self, model):
+        self.model = model
+
+    def calculate(self):
+        return f"Робот {self.model} виконує розрахунки."
+
+
+class Cyborg(Animal, Robot):
+    def __init__(self, name, species, model):
+        Animal.__init__(self, name, species)
+        Robot.__init__(self, model)
+
+    def special_ability(self):
+        return f"{self.name} може використовувати біологічні й механічні функції одночасно!"
+
+if __name__ == "__main__":
+    cyborg = Cyborg("Алекс", "кіт", "Model-X")
+
+    print(cyborg.breathe())
+
+    print(cyborg.move())
+    print(f"Вид: {cyborg.species}")
+
+    print(cyborg.calculate())
+    print(f"Модель робота: {cyborg.model}")
+
+    print(cyborg.special_ability())
