@@ -1,0 +1,15 @@
+class IterableObject:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def __iter__(self):
+        current = self.start
+        while current <= self.end:
+            yield current
+            current += 1
+
+iterable = IterableObject(1, 5)
+
+for number in iterable:
+    print(number)
