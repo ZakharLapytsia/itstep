@@ -1,0 +1,29 @@
+import colorama
+from colorama import Fore, Back, Style
+
+colorama.init(autoreset=True)
+
+print("Атрибути та методи бібліотеки colorama:")
+print(dir(colorama))
+
+print("\n1. Fore (кольри тексту):")
+print(dir(Fore))
+
+print("\n2. Back (кольори фону):")
+print(dir(Back))
+
+print("\n3. Style (стилі тексту):")
+print(dir(Style))
+
+print("\n4. Метод init:")
+print(colorama.init.__doc__)
+
+from colorama import Fore, Back, Style, init
+
+init(autoreset=True)
+
+print(Fore.RED + "Цей текст червоний")
+print(Back.GREEN + "Текст із зеленим фоном")
+print(Style.BRIGHT + "Яскравий текст")
+print(Fore.BLUE + Back.YELLOW + "Синій текст на жовтому фоні")
+print(Style.DIM + "Тьмяний текст")
