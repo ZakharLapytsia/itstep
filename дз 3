@@ -1,0 +1,43 @@
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        return f"Привіт! Я {self.name}, мені {self.age} років."
+
+    def interact_with_animal(self, animal):
+        if isinstance(animal, Animal):
+            return f"{self.name} каже: '{animal.name}, який ти {animal.species}! {animal.sound()}'"
+        else:
+            return "Це не тварина!"
+
+
+class Animal:
+    def __init__(self, species, name):
+        self.species = species
+        self.name = name
+
+    def sound(s
+        sounds = {
+            "dog": "гав-гав",
+            "cat": "мяу",
+            "bird": "чірік-чірік"
+        }
+        return sounds.get(self.species.lower(), "незрозумілий звук")
+
+    def introduce(self):
+        return f"Я {self.species}, і мене звати {self.name}."
+
+
+
+if __name__ == "__main__":
+    human = Human("Олексій", 25)
+    dog = Animal("dog", "Рекс")
+    cat = Animal("cat", "Мурчик")
+
+    # Взаємодія
+    print(human.greet())
+    print(dog.introduce())
+    print(human.interact_with_animal(dog))
+    print(human.interact_with_animal(cat))
